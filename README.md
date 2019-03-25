@@ -8,6 +8,9 @@ Contributors:
 Fixed:
 - PolledWait (DaffaMage) [#1]
 - ChangeElevatorWallBlocker (DaffaMage) [#1]
+- UpdateEachStockBuilding (LXSMNSYC/Almia)
+- UpdateStockAvailability (LXSMNSYC/Almia)
+- WakePlayerUnits (LXSMNSYC/Almia)
 
 ## TODO
 TODO List (from Malhorne):
