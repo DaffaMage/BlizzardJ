@@ -1157,6 +1157,7 @@ function PolledWait takes real duration returns nothing
         endloop
         call DestroyTimer(t)
     endif
+    set t = null
 endfunction
 
 //===========================================================================
@@ -4206,6 +4207,8 @@ function ChangeElevatorWallBlocker takes real x, real y, real facing, boolean op
             // Unrecognized blocker angle - don't nudge anything.
         endif
     endif
+    set blocker = null
+    set r = null
 endfunction
 
 //===========================================================================
