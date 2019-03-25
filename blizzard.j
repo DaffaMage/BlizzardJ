@@ -3182,6 +3182,9 @@ function DelayedSuspendDecay takes nothing returns nothing
 
     call DestroyGroup(boneGroup)
     call DestroyGroup(fleshGroup)
+    
+    set boneGroup = null
+    set fleshGroup = null
 endfunction
 
 //===========================================================================
@@ -4622,6 +4625,7 @@ function CountUnitsInGroup takes group g returns integer
     if (wantDestroy) then
         call DestroyGroup(g)
     endif
+    
     return bj_groupCountUnits
 endfunction
 
@@ -4682,6 +4686,8 @@ function CountLivingPlayerUnitsOfTypeId takes integer unitId, player whichPlayer
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filterLivingPlayerUnitsOfTypeId)
     set matchedCount = CountUnitsInGroup(g)
     call DestroyGroup(g)
+    
+    set g = null
 
     return matchedCount
 endfunction
@@ -5048,6 +5054,8 @@ function ConfigureNeutralVictim takes nothing returns nothing
 
     // Neutral Victim does not give bounties.
     call SetPlayerState(neutralVictim, PLAYER_STATE_GIVES_BOUNTY, 0)
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -5254,6 +5262,9 @@ function CustomVictoryDialogBJ takes player whichPlayer returns nothing
     call DialogDisplay( whichPlayer, d, true )
     call VolumeGroupSetVolumeForPlayerBJ( whichPlayer, SOUND_VOLUMEGROUP_UI, 1.0 )
     call StartSoundForPlayerBJ( whichPlayer, bj_victoryDialogSound )
+    
+    set t = null
+    set d = null
 endfunction
 
 //===========================================================================
@@ -5312,9 +5323,9 @@ function CustomDefeatReduceDifficultyBJ takes nothing returns nothing
         call SetGameDifficulty(MAP_DIFFICULTY_EASY)
     elseif (diff == MAP_DIFFICULTY_HARD) then
         call SetGameDifficulty(MAP_DIFFICULTY_NORMAL)
-    else
-        // Unrecognized difficulty
     endif
+    
+    set diff = null
 
     call RestartGame( true )
 endfunction
