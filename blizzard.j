@@ -3127,6 +3127,8 @@ function DelayedSuspendDecayStopAnimEnum takes nothing returns nothing
     if (GetUnitState(enumUnit, UNIT_STATE_LIFE) <= 0) then
         call SetUnitTimeScale(enumUnit, 0.0001)
     endif
+   
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3137,6 +3139,8 @@ function DelayedSuspendDecayBoneEnum takes nothing returns nothing
         call UnitSuspendDecay(enumUnit, true)
         call SetUnitTimeScale(enumUnit, 0.0001)
     endif
+    
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3152,6 +3156,9 @@ function DelayedSuspendDecayFleshEnum takes nothing returns nothing
         call SetUnitTimeScale(enumUnit, 10.0)
         call SetUnitAnimation(enumUnit, "decay flesh")
     endif
+    
+    
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3937,6 +3944,7 @@ function EnumDestructablesInCircleBJFilter takes nothing returns boolean
 
     set result = DistanceBetweenPoints(destLoc, bj_enumDestructableCenter) <= bj_enumDestructableRadius
     call RemoveLocation(destLoc)
+    set destLoc = null
     return result
 endfunction
 
@@ -3992,6 +4000,8 @@ function EnumDestructablesInCircleBJ takes real radius, location loc, code actio
         call EnumDestructablesInRect(r, filterEnumDestructablesInCircleBJ, actionFunc)
         call RemoveRect(r)
     endif
+    
+    set r = null
 endfunction
 
 //===========================================================================
