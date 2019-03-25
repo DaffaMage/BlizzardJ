@@ -11,11 +11,15 @@ Fixed:
 - UpdateEachStockBuilding (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
 - UpdateStockAvailability (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
 - WakePlayerUnits (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
-- ShareEverythingWithTeamAI (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
-- ShareEverythingWithTeam (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
-- CinematicFadeBJ (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
-- TeamInitPlayerSlots (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
-
+- ShareEverythingWithTeamAI (LXSMNSYC/Almia) [221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- ShareEverythingWithTeam (LXSMNSYC/Almia) [221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- CinematicFadeBJ (LXSMNSYC/Almia) [221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- TeamInitPlayerSlots (LXSMNSYC/Almia) [221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- ConfigureNeutralVictim (LXSMNSYC/Almia) [32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CountLivingPlayerUnitsOfTypeId [32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CustomDefeatReduceDifficultyBJ [32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CustomVictoryDialogBJ [32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- DelayedSuspendDecay  [32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
 ## TODO
 TODO List (from Malhorne):
 - PolledWait (cause : leak)
