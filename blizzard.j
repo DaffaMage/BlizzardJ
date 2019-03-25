@@ -3554,6 +3554,7 @@ function WakePlayerUnits takes player whichPlayer returns nothing
     call GroupEnumUnitsOfPlayer(g, whichPlayer, null)
     call ForGroup(g, function WakePlayerUnitsEnum)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
@@ -9961,6 +9962,7 @@ function UpdateStockAvailability takes item whichItem returns nothing
     else
         // Not interested in this item type - ignore the item.
     endif
+    set iType = null
 endfunction
 
 //===========================================================================
@@ -9995,6 +9997,7 @@ function UpdateEachStockBuilding takes itemtype iType, integer iLevel returns no
     call GroupEnumUnitsOfType(g, "marketplace", null)
     call ForGroup(g, function UpdateEachStockBuildingEnum)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
