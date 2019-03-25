@@ -8,9 +8,13 @@ Contributors:
 Fixed:
 - PolledWait (DaffaMage) [#1]
 - ChangeElevatorWallBlocker (DaffaMage) [#1]
-- UpdateEachStockBuilding (LXSMNSYC/Almia)
-- UpdateStockAvailability (LXSMNSYC/Almia)
-- WakePlayerUnits (LXSMNSYC/Almia)
+- UpdateEachStockBuilding (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- UpdateStockAvailability (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- WakePlayerUnits (LXSMNSYC/Almia) [f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- ShareEverythingWithTeamAI (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- ShareEverythingWithTeam (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- CinematicFadeBJ (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- TeamInitPlayerSlots (LXSMNSYC/Almia) [221decd ](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
 
 ## TODO
 TODO List (from Malhorne):
