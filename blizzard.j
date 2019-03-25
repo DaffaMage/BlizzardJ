@@ -4995,6 +4995,7 @@ function ShareEverythingWithTeamAI takes player whichPlayer returns nothing
         set playerIndex = playerIndex + 1
         exitwhen playerIndex == bj_MAX_PLAYERS
     endloop
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -5017,6 +5018,7 @@ function ShareEverythingWithTeam takes player whichPlayer returns nothing
         set playerIndex = playerIndex + 1
         exitwhen playerIndex == bj_MAX_PLAYERS
     endloop
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -6692,8 +6694,6 @@ function CinematicFadeBJ takes integer fadetype, real duration, string tex, real
             call ContinueCinematicFadeAfterBJ(duration * 0.5, red, green, blue, trans, tex)
             call FinishCinematicFadeAfterBJ(duration)
         endif
-    else
-        // Unrecognized fadetype - ignore the request.
     endif
 endfunction
 
@@ -9708,6 +9708,8 @@ function TeamInitPlayerSlots takes integer teamCount returns nothing
         set index = index + 1
         exitwhen index == bj_MAX_PLAYERS
     endloop
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
