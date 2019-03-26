@@ -35,6 +35,7 @@ Fixed:
 - GetUnitsOfPlayerMatching (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
 - GetUnitsOfPlayerAndTypeId (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
 - GetUnitsSelectedAll (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetCurrentCameraSetup  (LXSMNSYC/Almia) [#3e3c3d1](https://github.com/LXSMNSYC/BlizzardJ/commit/3e3c3d1dfd8cea66709ae43f6a059b1080d2d50e)
 ## TODO
 TODO List (from Malhorne):
 - PolledWait (cause : leak)
