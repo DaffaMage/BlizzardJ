@@ -4461,6 +4461,7 @@ function EnumUnitsSelected takes player whichPlayer, boolexpr enumFilter, code e
     call DestroyBoolExpr(enumFilter)
     call ForGroup(g, enumAction)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
@@ -4468,7 +4469,10 @@ function GetUnitsInRectMatching takes rect r, boolexpr filter returns group
     local group g = CreateGroup()
     call GroupEnumUnitsInRect(g, r, filter)
     call DestroyBoolExpr(filter)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4486,7 +4490,10 @@ function GetUnitsInRectOfPlayer takes rect r, player whichPlayer returns group
     local group g = CreateGroup()
     set bj_groupEnumOwningPlayer = whichPlayer
     call GroupEnumUnitsInRect(g, r, filterGetUnitsInRectOfPlayer)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4494,7 +4501,10 @@ function GetUnitsInRangeOfLocMatching takes real radius, location whichLocation,
     local group g = CreateGroup()
     call GroupEnumUnitsInRangeOfLoc(g, whichLocation, radius, filter)
     call DestroyBoolExpr(filter)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4524,6 +4534,11 @@ function GetUnitsOfTypeIdAll takes integer unitid returns group
         exitwhen index == bj_MAX_PLAYER_SLOTS
     endloop
     call DestroyGroup(g)
+    
+    set g = null
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 
     return result
 endfunction
@@ -4533,7 +4548,9 @@ function GetUnitsOfPlayerMatching takes player whichPlayer, boolexpr filter retu
     local group g = CreateGroup()
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filter)
     call DestroyBoolExpr(filter)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4551,7 +4568,9 @@ function GetUnitsOfPlayerAndTypeId takes player whichPlayer, integer unitid retu
     local group g = CreateGroup()
     set bj_groupEnumTypeId = unitid
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filterGetUnitsOfPlayerAndTypeId)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4559,7 +4578,9 @@ function GetUnitsSelectedAll takes player whichPlayer returns group
     local group g = CreateGroup()
     call SyncSelections()
     call GroupEnumUnitsSelected(g, whichPlayer, null)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -5200,6 +5221,9 @@ function GameOverDialogBJ takes player whichPlayer, boolean leftGame returns not
 
     call DialogDisplay( whichPlayer, d, true )
     call StartSoundForPlayerBJ( whichPlayer, bj_defeatDialogSound )
+    
+    set t = null
+    set d = null
 endfunction
 
 //===========================================================================
@@ -5798,6 +5822,8 @@ function ForceSetLeaderboardBJ takes leaderboard lb, force toForce returns nothi
         set index = index + 1
         exitwhen index == bj_MAX_PLAYERS
     endloop
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
