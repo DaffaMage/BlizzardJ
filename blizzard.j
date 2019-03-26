@@ -626,6 +626,8 @@ globals
     lightning          bj_lastCreatedLightning     = null
     image              bj_lastCreatedImage         = null
     ubersplat          bj_lastCreatedUbersplat     = null
+    
+    camerasetup	       bj_lastCreatedCameraSetup   = null
 
     // Filter function vars
     boolexpr           filterIssueHauntOrderAtLocBJ      = null
@@ -1294,7 +1296,10 @@ function GetCurrentCameraSetup takes nothing returns camerasetup
     call CameraSetupSetField(theCam, CAMERA_FIELD_ROLL,            bj_RADTODEG * GetCameraField(CAMERA_FIELD_ROLL),            duration)
     call CameraSetupSetField(theCam, CAMERA_FIELD_ROTATION,        bj_RADTODEG * GetCameraField(CAMERA_FIELD_ROTATION),        duration)
     call CameraSetupSetDestPosition(theCam, GetCameraTargetPositionX(), GetCameraTargetPositionY(), duration)
-    return theCam
+    
+    set bj_lastCreatedCameraSetup = theCam
+    set theCam = null
+    return bj_lastCreatedCameraSetup
 endfunction
 
 //===========================================================================
