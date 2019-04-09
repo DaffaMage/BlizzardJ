@@ -3,11 +3,13 @@ A project to fix all the mistakes Blizzard did with their Blizzard J.
 
 Contributors:
 - Muhammad Daffa Abiyyu Rahman (DaffaMage)
+- (PurgeandFire)
 
 ## Current Progress:
 Fixed:
 - PolledWait (DaffaMage) [#1]
 - ChangeElevatorWallBlocker (DaffaMage) [#1]
+- SmartCameraPanBJ (PurgeandFire) [#2]
 
 ## TODO
 TODO List (from Malhorne):

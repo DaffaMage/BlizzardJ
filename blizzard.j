@@ -1392,19 +1392,20 @@ endfunction
 
 //===========================================================================
 function SmartCameraPanBJ takes player whichPlayer, location loc, real duration returns nothing
-    local real dist
+    local real tx = GetLocationX(loc)
+    local real ty = GetLocationY(loc)
+    local real dx = tx - GetCameraTargetPositionX()
+    local real dy = ty - GetCameraTargetPositionY()
+    local real dist = SquareRoot(dx * dx + dy * dy)
     if (GetLocalPlayer() == whichPlayer) then
-        // Use only local code (no net traffic) within this block to avoid desyncs.
-
-        set dist = DistanceBetweenPoints(loc, GetCameraTargetPositionLoc())
         if (dist >= bj_SMARTPAN_TRESHOLD_SNAP) then
-            // If the user is too far away, snap the camera.
-            call PanCameraToTimed(GetLocationX(loc), GetLocationY(loc), 0)
+            call PanCameraToTimed(tx, ty, 0)
+            // Far away = snap camera immediately to point
         elseif (dist >= bj_SMARTPAN_TRESHOLD_PAN) then
-            // If the user is moderately close, pan the camera.
-            call PanCameraToTimed(GetLocationX(loc), GetLocationY(loc), duration)
+            call PanCameraToTimed(tx, ty, duration)
+            // Moderately close = pan camera over duration
         else
-            // User is close enough, so don't touch the camera.
+            // User is close, don't move camera
         endif
     endif
 endfunction
