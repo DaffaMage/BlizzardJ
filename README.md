@@ -3,11 +3,13 @@ A project to fix all the mistakes Blizzard did with their Blizzard J.
 
 Contributors:
 - Muhammad Daffa Abiyyu Rahman (DaffaMage)
+- (PurgeandFire)
 
 ## Current Progress:
 Fixed:
 - PolledWait (DaffaMage) [#1]
 - ChangeElevatorWallBlocker (DaffaMage) [#1]
+- SmartCameraPanBJ (PurgeandFire) [#2]
 - UpdateEachStockBuilding (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
 - UpdateStockAvailability (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
 - WakePlayerUnits (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
@@ -36,6 +38,7 @@ Fixed:
 - GetUnitsOfPlayerAndTypeId (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
 - GetUnitsSelectedAll (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
 - GetCurrentCameraSetup  (LXSMNSYC/Almia) [#3e3c3d1](https://github.com/LXSMNSYC/BlizzardJ/commit/3e3c3d1dfd8cea66709ae43f6a059b1080d2d50e)
+
 ## TODO
 TODO List (from Malhorne):
 - PolledWait (cause : leak)
