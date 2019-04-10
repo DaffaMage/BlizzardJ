@@ -10,6 +10,34 @@ Fixed:
 - PolledWait (DaffaMage) [#1]
 - ChangeElevatorWallBlocker (DaffaMage) [#1]
 - SmartCameraPanBJ (PurgeandFire) [#2]
+- UpdateEachStockBuilding (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- UpdateStockAvailability (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- WakePlayerUnits (LXSMNSYC/Almia) [#f8adca9](https://github.com/LXSMNSYC/BlizzardJ/commit/f8adca9c5e2a6fbc91e5ecb70621751c6b5591a7#diff-d7a7700e7562d68e6590b55183509592)
+- ShareEverythingWithTeamAI (LXSMNSYC/Almia) [#221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- ShareEverythingWithTeam (LXSMNSYC/Almia) [#221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- CinematicFadeBJ (LXSMNSYC/Almia) [#221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- TeamInitPlayerSlots (LXSMNSYC/Almia) [#221decd](https://github.com/LXSMNSYC/BlizzardJ/commit/221decd3a1367d2b1822050c68dae8a34c56350a)
+- ConfigureNeutralVictim (LXSMNSYC/Almia) [#32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CountLivingPlayerUnitsOfTypeId (LXSMNSYC/Almia)  [#32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CustomDefeatReduceDifficultyBJ (LXSMNSYC/Almia)  [#32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- CustomVictoryDialogBJ (LXSMNSYC/Almia)  [#32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- DelayedSuspendDecay (LXSMNSYC/Almia) [#32b3837](https://github.com/LXSMNSYC/BlizzardJ/commit/32b3837a502d9a202a8c1f9db2cb55d18823b68f)
+- DelayedSuspendDecayStopAnimEnum (LXSMNSYC/Almia) [#b57272c](https://github.com/LXSMNSYC/BlizzardJ/commit/b57272c0697c9ee70bbe284747980bd3fb71a820)
+- DelayedSuspendDecayBoneEnum (LXSMNSYC/Almia) [#b57272c](https://github.com/LXSMNSYC/BlizzardJ/commit/b57272c0697c9ee70bbe284747980bd3fb71a820) 
+- DelayedSuspendDecayFleshEnum (LXSMNSYC/Almia) [#b57272c](https://github.com/LXSMNSYC/BlizzardJ/commit/b57272c0697c9ee70bbe284747980bd3fb71a820) 
+- EnumDestructablesInCircleBJFilter (LXSMNSYC/Almia) [#b57272c](https://github.com/LXSMNSYC/BlizzardJ/commit/b57272c0697c9ee70bbe284747980bd3fb71a820) 
+- EnumDestructablesInCircleBJ (LXSMNSYC/Almia) [#b57272c](https://github.com/LXSMNSYC/BlizzardJ/commit/b57272c0697c9ee70bbe284747980bd3fb71a820) 
+- EnumUnitsSelected (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- ForceSetLeaderboardBJ (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GameOverDialogBJ (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsInRectMatching (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsInRectOfPlayer (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsInRangeOfLocMatching (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsOfTypeIdAll (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsOfPlayerMatching (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsOfPlayerAndTypeId (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetUnitsSelectedAll (LXSMNSYC/Almia) [#18fef5e](https://github.com/LXSMNSYC/BlizzardJ/commit/18fef5eefd48e475d23222993f3a773ae26cd56e)
+- GetCurrentCameraSetup  (LXSMNSYC/Almia) [#3e3c3d1](https://github.com/LXSMNSYC/BlizzardJ/commit/3e3c3d1dfd8cea66709ae43f6a059b1080d2d50e)
 
 ## TODO
 TODO List (from Malhorne):

@@ -626,6 +626,8 @@ globals
     lightning          bj_lastCreatedLightning     = null
     image              bj_lastCreatedImage         = null
     ubersplat          bj_lastCreatedUbersplat     = null
+    
+    camerasetup	       bj_lastCreatedCameraSetup   = null
 
     // Filter function vars
     boolexpr           filterIssueHauntOrderAtLocBJ      = null
@@ -1294,7 +1296,10 @@ function GetCurrentCameraSetup takes nothing returns camerasetup
     call CameraSetupSetField(theCam, CAMERA_FIELD_ROLL,            bj_RADTODEG * GetCameraField(CAMERA_FIELD_ROLL),            duration)
     call CameraSetupSetField(theCam, CAMERA_FIELD_ROTATION,        bj_RADTODEG * GetCameraField(CAMERA_FIELD_ROTATION),        duration)
     call CameraSetupSetDestPosition(theCam, GetCameraTargetPositionX(), GetCameraTargetPositionY(), duration)
-    return theCam
+    
+    set bj_lastCreatedCameraSetup = theCam
+    set theCam = null
+    return bj_lastCreatedCameraSetup
 endfunction
 
 //===========================================================================
@@ -3128,6 +3133,8 @@ function DelayedSuspendDecayStopAnimEnum takes nothing returns nothing
     if (GetUnitState(enumUnit, UNIT_STATE_LIFE) <= 0) then
         call SetUnitTimeScale(enumUnit, 0.0001)
     endif
+   
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3138,6 +3145,8 @@ function DelayedSuspendDecayBoneEnum takes nothing returns nothing
         call UnitSuspendDecay(enumUnit, true)
         call SetUnitTimeScale(enumUnit, 0.0001)
     endif
+    
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3153,6 +3162,9 @@ function DelayedSuspendDecayFleshEnum takes nothing returns nothing
         call SetUnitTimeScale(enumUnit, 10.0)
         call SetUnitAnimation(enumUnit, "decay flesh")
     endif
+    
+    
+    set enumUnit = null
 endfunction
 
 //===========================================================================
@@ -3183,6 +3195,9 @@ function DelayedSuspendDecay takes nothing returns nothing
 
     call DestroyGroup(boneGroup)
     call DestroyGroup(fleshGroup)
+    
+    set boneGroup = null
+    set fleshGroup = null
 endfunction
 
 //===========================================================================
@@ -3555,6 +3570,7 @@ function WakePlayerUnits takes player whichPlayer returns nothing
     call GroupEnumUnitsOfPlayer(g, whichPlayer, null)
     call ForGroup(g, function WakePlayerUnitsEnum)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
@@ -3934,6 +3950,7 @@ function EnumDestructablesInCircleBJFilter takes nothing returns boolean
 
     set result = DistanceBetweenPoints(destLoc, bj_enumDestructableCenter) <= bj_enumDestructableRadius
     call RemoveLocation(destLoc)
+    set destLoc = null
     return result
 endfunction
 
@@ -3989,6 +4006,8 @@ function EnumDestructablesInCircleBJ takes real radius, location loc, code actio
         call EnumDestructablesInRect(r, filterEnumDestructablesInCircleBJ, actionFunc)
         call RemoveRect(r)
     endif
+    
+    set r = null
 endfunction
 
 //===========================================================================
@@ -4448,6 +4467,7 @@ function EnumUnitsSelected takes player whichPlayer, boolexpr enumFilter, code e
     call DestroyBoolExpr(enumFilter)
     call ForGroup(g, enumAction)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
@@ -4455,7 +4475,10 @@ function GetUnitsInRectMatching takes rect r, boolexpr filter returns group
     local group g = CreateGroup()
     call GroupEnumUnitsInRect(g, r, filter)
     call DestroyBoolExpr(filter)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4473,7 +4496,10 @@ function GetUnitsInRectOfPlayer takes rect r, player whichPlayer returns group
     local group g = CreateGroup()
     set bj_groupEnumOwningPlayer = whichPlayer
     call GroupEnumUnitsInRect(g, r, filterGetUnitsInRectOfPlayer)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4481,7 +4507,10 @@ function GetUnitsInRangeOfLocMatching takes real radius, location whichLocation,
     local group g = CreateGroup()
     call GroupEnumUnitsInRangeOfLoc(g, whichLocation, radius, filter)
     call DestroyBoolExpr(filter)
-    return g
+    
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4511,6 +4540,11 @@ function GetUnitsOfTypeIdAll takes integer unitid returns group
         exitwhen index == bj_MAX_PLAYER_SLOTS
     endloop
     call DestroyGroup(g)
+    
+    set g = null
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 
     return result
 endfunction
@@ -4520,7 +4554,9 @@ function GetUnitsOfPlayerMatching takes player whichPlayer, boolexpr filter retu
     local group g = CreateGroup()
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filter)
     call DestroyBoolExpr(filter)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4538,7 +4574,9 @@ function GetUnitsOfPlayerAndTypeId takes player whichPlayer, integer unitid retu
     local group g = CreateGroup()
     set bj_groupEnumTypeId = unitid
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filterGetUnitsOfPlayerAndTypeId)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4546,7 +4584,9 @@ function GetUnitsSelectedAll takes player whichPlayer returns group
     local group g = CreateGroup()
     call SyncSelections()
     call GroupEnumUnitsSelected(g, whichPlayer, null)
-    return g
+    set bj_lastCreatedGroup = g
+    set g = null
+    return bj_lastCreatedGroup
 endfunction
 
 //===========================================================================
@@ -4622,6 +4662,7 @@ function CountUnitsInGroup takes group g returns integer
     if (wantDestroy) then
         call DestroyGroup(g)
     endif
+    
     return bj_groupCountUnits
 endfunction
 
@@ -4682,6 +4723,8 @@ function CountLivingPlayerUnitsOfTypeId takes integer unitId, player whichPlayer
     call GroupEnumUnitsOfPlayer(g, whichPlayer, filterLivingPlayerUnitsOfTypeId)
     set matchedCount = CountUnitsInGroup(g)
     call DestroyGroup(g)
+    
+    set g = null
 
     return matchedCount
 endfunction
@@ -4995,6 +5038,7 @@ function ShareEverythingWithTeamAI takes player whichPlayer returns nothing
         set playerIndex = playerIndex + 1
         exitwhen playerIndex == bj_MAX_PLAYERS
     endloop
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -5017,6 +5061,7 @@ function ShareEverythingWithTeam takes player whichPlayer returns nothing
         set playerIndex = playerIndex + 1
         exitwhen playerIndex == bj_MAX_PLAYERS
     endloop
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -5046,6 +5091,8 @@ function ConfigureNeutralVictim takes nothing returns nothing
 
     // Neutral Victim does not give bounties.
     call SetPlayerState(neutralVictim, PLAYER_STATE_GIVES_BOUNTY, 0)
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -5180,6 +5227,9 @@ function GameOverDialogBJ takes player whichPlayer, boolean leftGame returns not
 
     call DialogDisplay( whichPlayer, d, true )
     call StartSoundForPlayerBJ( whichPlayer, bj_defeatDialogSound )
+    
+    set t = null
+    set d = null
 endfunction
 
 //===========================================================================
@@ -5252,6 +5302,9 @@ function CustomVictoryDialogBJ takes player whichPlayer returns nothing
     call DialogDisplay( whichPlayer, d, true )
     call VolumeGroupSetVolumeForPlayerBJ( whichPlayer, SOUND_VOLUMEGROUP_UI, 1.0 )
     call StartSoundForPlayerBJ( whichPlayer, bj_victoryDialogSound )
+    
+    set t = null
+    set d = null
 endfunction
 
 //===========================================================================
@@ -5310,9 +5363,9 @@ function CustomDefeatReduceDifficultyBJ takes nothing returns nothing
         call SetGameDifficulty(MAP_DIFFICULTY_EASY)
     elseif (diff == MAP_DIFFICULTY_HARD) then
         call SetGameDifficulty(MAP_DIFFICULTY_NORMAL)
-    else
-        // Unrecognized difficulty
     endif
+    
+    set diff = null
 
     call RestartGame( true )
 endfunction
@@ -5775,6 +5828,8 @@ function ForceSetLeaderboardBJ takes leaderboard lb, force toForce returns nothi
         set index = index + 1
         exitwhen index == bj_MAX_PLAYERS
     endloop
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -6692,8 +6747,6 @@ function CinematicFadeBJ takes integer fadetype, real duration, string tex, real
             call ContinueCinematicFadeAfterBJ(duration * 0.5, red, green, blue, trans, tex)
             call FinishCinematicFadeAfterBJ(duration)
         endif
-    else
-        // Unrecognized fadetype - ignore the request.
     endif
 endfunction
 
@@ -9708,6 +9761,8 @@ function TeamInitPlayerSlots takes integer teamCount returns nothing
         set index = index + 1
         exitwhen index == bj_MAX_PLAYERS
     endloop
+    
+    set indexPlayer = null
 endfunction
 
 //===========================================================================
@@ -9962,6 +10017,7 @@ function UpdateStockAvailability takes item whichItem returns nothing
     else
         // Not interested in this item type - ignore the item.
     endif
+    set iType = null
 endfunction
 
 //===========================================================================
@@ -9996,6 +10052,7 @@ function UpdateEachStockBuilding takes itemtype iType, integer iLevel returns no
     call GroupEnumUnitsOfType(g, "marketplace", null)
     call ForGroup(g, function UpdateEachStockBuildingEnum)
     call DestroyGroup(g)
+    set g = null
 endfunction
 
 //===========================================================================
