@@ -4,6 +4,7 @@ A project to fix all the mistakes Blizzard did with their Blizzard J.
 Contributors:
 - Muhammad Daffa Abiyyu Rahman (DaffaMage)
 - (PurgeandFire)
+- Alexis Munsayac (Almia/LXSMNSYC)
 
 ## Current Progress:
 Fixed:
@@ -41,25 +42,8 @@ Fixed:
 
 ## TODO
 TODO List (from Malhorne):
-- PolledWait (cause : leak)
-- ChangeElevatorWallBlocker (cause : leak)
-- CinematicFadeBJ (cause : useless else)
-- ConfigureNeutralVictim (cause : safer to null player local handle)
-- CountLivingPlayerUnitsOfTypeId (cause : leak)
 - CountUnitsInGroup (cause : leak)
 - CustomDefeatDialogBJ (cause : leak) -> Can use a complete rework on all the functions used to make them return boolean and use them as triggercondition for faster execution...
-- CustomDefeatReduceDifficultyBJ (cause : leak)
-- CustomVictoryDialogBJ (cause : leak)
-- DelayedSuspendDecay (cause: leak)
-- DelayedSuspendDecayBoneEnum (cause : leak)
-- DelayedSuspendDecayFleshEnum (cause : leak)
-- DelayedSuspendDecayStopAnimEnum (cause : leak)
-- EnumDestructablesInCircleBJ (cause : leak)
-- EnumDestructablesInCircleBJFilter (cause : leak)
-- EnumUnitsSelected (cause : leak)
-- ForceSetLeaderboardBJ (cause : safer to null player local handle)
-- GameOverDialogBJ (cause : leak)
-- GetCurrentCameraSetup (cause : need total rework .... Like returning a global since it returns a local handle :/)
 - GetForceOfPlayer (cause : same as above)
 - GetPlayersAllies (cause : same as above)
 - GetPlayersByMapControl (cause : same as above)
@@ -67,11 +51,7 @@ TODO List (from Malhorne):
 - GetPlayersMatching (cause : same as above)
 - GetRandomSubGroup (cause : same as above)
 - GetUnitsInRangeOfLocMatching (cause : same as above)
-- GetUnitsInRectMatching (cause : same as above)
-- GetUnitsInRectOfPlayer (cause : same as above)
-- GetUnitsOfPlayerAndTypeId (cause : same as above)
 - GetUnitsOfPlayerMatching (cause : same as above)
-- GetUnitsSelectedAll (cause : same as above)
 -
 - GetUnitsOfTypeIdAll (cause : same as above and LEAK xD)
 - GetInventoryIndexOfItemTypeBJ (cause : leak)
@@ -139,13 +119,7 @@ TODO List (from Malhorne):
 - SetPlayerColorBJ (cause : leak)
 - SetUnitFacingToFaceLocTimed (cause : leak)
 - SetUnitFacingToFaceUnitTimed (cause : leak)
-- ShareEverythingWithTeam (cause : safer to null player local handle)
-- ShareEverythingWithTeamAI (cause : safer to null player local handle)
-- TeamInitPlayerSlots (cause : same as above)
 - TriggerActionUnitRescuedBJ (cause : leak)
 - TriggerRegisterEnterRectSimple (cause : leak)
 - TriggerRegisterLeaveRectSimple (cause : leak)
 - UnitDropItem (cause : return a local handle)
-- UpdateEachStockBuilding (cause : leak)
-- UpdateStockAvailability (cause : leak)
-- WakePlayerUnits (cause : leak)
